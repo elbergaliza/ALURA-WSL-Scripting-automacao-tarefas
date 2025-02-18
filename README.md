@@ -6,3 +6,5 @@
 *	Automatize processos de teste e análise de código usando ferramentas como Pytest e Flake8
 *	Gere a documentação do projeto de modo automatizado com o Sphinx
 *	Crie scripts para análise de dados usando a biblioteca Pandas
+
+A URL do Jenkins é http://localhost:8080/
