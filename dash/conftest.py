@@ -24,21 +24,24 @@ Adding explicit waits or timeouts for better reliability
 @pytest.fixture(scope="module")
 def browser():
     # Get Chrome path from environment variable or use default
-    chrome_path = os.getenv('CHROME_BINARY_PATH', 
-        "/home/egaliza/WORKSPACE-PYTHON/ALURA-Scripting-automacao-tarefas/dash/chrome-linux64/chrome")
+    #chrome_path = os.getenv('CHROME_BINARY_PATH', 
+    #    "/home/egaliza/WORKSPACE-PYTHON/ALURA-Scripting-automacao-tarefas/dash/chrome-linux64/chrome")
     #driver_path = os.path.join(os.path.dirname(__file__), "drivers", "chromedriver")
-    driver_path = os.getenv('CHROMEDRV_BINARY_PATH', '/usr/bin/chromedriver')
+    #driver_path = os.getenv('CHROMEDRV_BINARY_PATH', '/usr/bin/chromedriver')
     
-    if not os.path.exists(chrome_path):
-        raise FileNotFoundError(f"Chrome binary not found at {chrome_path}")
+    # if not os.path.exists(chrome_path):
+    #     raise FileNotFoundError(f"Chrome binary not found at {chrome_path}")
     
     chrome_options = webdriver.ChromeOptions()
-    chrome_options.binary_location = chrome_path
-    
+    #chrome_options.binary_location = chrome_path
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-gpu")
+
     try:
-        service = webdriver.ChromeService(executable_path=driver_path)
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        print(f"Chrome started successfully using binary at {chrome_path}")
+        #service = webdriver.ChromeService(executable_path=driver_path)
+        #driver = webdriver.Chrome(service=service, options=chrome_options)
+        driver = webdriver.Chrome(options=chrome_options)
+        print(f"Chrome started successfully")
         '''
         The yield statement is a crucial part - it:
         Returns the driver to the test that needs it
