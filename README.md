@@ -8,3 +8,8 @@
 *	Crie scripts para análise de dados usando a biblioteca Pandas
 
 A URL do Jenkins é http://localhost:8080/
+
+Antes de realizar o teste, é necessário garantir que o projeto esteja em execução em segundo plano, ou seja, 
+que o servidor dash esteja rodando na nossa máquina. 
+Portanto, é importante executar python3 main.py no terminal. 
+No meu caso, o servidor já está rodando na porta 8081, conforme mudamos no código.
