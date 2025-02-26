@@ -1,4 +1,5 @@
 # ALURA-WSL-Scripting-automacao-tarefas
+#CURSO: Scripting automação de tarefas com Python e criação de Pipelines no Jenkins
 **Tópicos abordados no curso**
 *	Utilize o Python na construção de scripts para automatização de processos
 *	Compreenda o que são pipelines de entrega contínua
@@ -7,6 +8,8 @@
 *	Gere a documentação do projeto de modo automatizado com o Sphinx
 *	Crie scripts para análise de dados usando a biblioteca Pandas
 
+**Possivel solução para o problema de acesso do executavel e bibliotecas do Python pelo Jenkisn **
+OBS: foi apolicada. Nao foi completada. Decidi usa o Docker.
 Para que o Jenkins tivesse acesso ao PYENV e ao PYTHON, controlado pelo usuário egaliza, foi aplicada
 uma solução de Reconfiguração de Permissões:
 
