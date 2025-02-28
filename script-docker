@@ -1,0 +1,5 @@
+
+script {
+    docker.build('dash_teste', '/var/lib/jenkins/workspace/pipeline_dashboard')
+    sh 'docker run -d -p 8081:5000 dash_teste:latest'
+}

@@ -1,0 +1,30 @@
+
+stages {
+    stage('Checkout') {
+        steps {
+            git 'https://github.com/lucasribeirolrm/dashboard'
+        }
+    }
+    stage('Test') {
+        steps {
+            sh 'pytest'
+        }
+    }
+    stage('Análise Estática') {
+        steps {
+            sh 'flake8 --ignore=W291,W293,W391 ./*.py || true'
+        }
+    }
+    stage('Documentação') {
+        steps {
+            sh 'sphinx-build -b html source/ build/'
+        }
+    }
+    stage('Ambiente de Teste') {
+        steps {
+            // incluir atividades
+            }
+        }
+    }
+}
+
